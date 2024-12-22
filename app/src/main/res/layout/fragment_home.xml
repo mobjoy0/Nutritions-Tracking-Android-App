@@ -1,0 +1,565 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/soft_cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/cherry_red"
+        android:paddingTop="7dp"
+        android:paddingStart="10dp"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/soft_cream"
+            android:textStyle="bold"
+            android:shadowColor="@color/black"
+            android:shadowRadius="15"
+            android:textSize="27dp"
+            android:text="Today"/>
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:scrollbarStyle="insideInset"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:textColor="@color/black"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:gravity="bottom"
+            android:text=" Summary" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom"
+            android:clickable="true"
+            android:focusable="true"
+            android:onClick="onTextViewClick"
+            android:layout_marginRight="8dp"
+            android:text="Details  "
+            android:textColor="@color/orange"
+            android:shadowColor="@color/black"
+            android:shadowRadius="2"
+            android:textStyle="bold"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/summary"
+            app:cardBackgroundColor="@color/cherry_red">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:orientation="vertical">
+
+        <!-- Row with TextViews and Circular ProgressBar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Left section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/leftofprogress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/soft_cream"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="15"
+                    android:textAlignment="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="0000" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="17sp"
+                    android:textColor="@color/static_textcolor"
+                    android:shadowRadius="5"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"
+                    android:text="eaten" />
+            </LinearLayout>
+
+            <!-- FrameLayout for circular progress indicator -->
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="2dp"
+                android:padding="10dp">
+                <TextView
+                    android:id="@+id/insideProgressData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/soft_cream"
+                    android:textStyle="bold"
+                    android:shadowRadius="15"
+                    android:shadowColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:text="No Data"
+                    android:layout_marginTop="-20dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Progress text indicating calories consumed or other relevant data"/>
+
+                <TextView
+                    android:id="@+id/insideProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/static_textcolor"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textSize="17sp"
+                    android:text="Remaining"
+                    android:layout_marginTop="1dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="Progress text indicating calories consumed or other relevant data"/>
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:max="160"
+                    android:progress="100"
+                    app:trackCornerRadius="10dp"
+                    android:rotation="-113"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    app:indicatorColor="#3333"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorInset="10dp"
+                    app:trackThickness="10dp"
+                    app:indicatorSize="140dp"/>
+
+                <!-- Round ProgressBar for Calories -->
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:progress="0"
+                    android:max="160"
+                    android:id="@+id/Circle_progress"
+                    android:layout_gravity="center"
+                    app:trackCornerRadius="10dp"
+                    android:rotation="-113"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    app:indicatorColor="@color/rosish_red"
+                    app:indicatorDirectionCircular="clockwise"
+                    app:indicatorInset="10dp"
+                    app:trackThickness="10dp"
+                    app:indicatorSize="140dp"/>
+            </FrameLayout>
+
+            <!-- Right section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/rightProgress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/soft_cream"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="15"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:layout_marginRight="5dp"
+                    android:textSize="20dp"
+                    android:text="9999" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/static_textcolor"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_marginRight="5dp"
+                    android:textSize="16dp"
+                    android:text="Required" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!-- Row with multiple TextViews and Linear ProgressBar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-50dp"
+            android:padding="10dp"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/static_textcolor"
+                    android:layout_weight="1"
+                    android:text="Carbs" />
+                <TextView
+                    android:id="@+id/carbsView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/soft_cream"
+                    android:text="00" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/protein"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16dp"
+                    android:textColor="@color/static_textcolor"
+                    android:text="Protein" />
+
+                <!-- Linear ProgressBar for Protein -->
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/protein_bar"
+                    android:layout_width="94dp"
+                    android:layout_height="wrap_content"
+                    android:max="95"
+                    android:progress="50"
+                    app:indicatorColor="@color/rosish_red"
+                    app:trackColor="#3333"
+                    app:trackCornerRadius="3dp"
+                    app:trackThickness="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:layout_gravity="center_horizontal"
+                    android:text="0/100"
+                    android:textSize="18sp"
+                    android:shadowColor="@color/black"
+                    android:shadowRadius="15"
+                    android:textColor="@color/soft_cream"
+                    android:id="@+id/proteinView"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_weight="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/static_textcolor"
+                    android:layout_weight="1"
+                    android:text="Fats" />
+                <TextView
+                    android:id="@+id/fatView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/soft_cream"
+                    android:text="00" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:text="Meals"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:elevation="20dp"
+
+        app:cardBackgroundColor="@color/cherry_red">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_meal"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="9dp"
+                android:src="@drawable/addmeal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record a meal"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/mealRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:padding="10dp"
+                    android:src="@drawable/history"/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meal history"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Create_meal"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/cercle_icons"
+                android:scaleType="fitCenter"
+                android:padding="10dp"
+                android:src="@drawable/createmeal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create your own meal"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/scan_product"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitCenter"
+                    android:padding="10dp"
+                    android:src="@drawable/mag_glass"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Scan a product"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:text="Mesurments"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/cherry_red">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="weight\nAdjust your weight:"
+                android:textAlignment="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/static_textcolor"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/minus_weight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:contentDescription="+"
+                        android:background="@color/cherry_red"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/remove" />
+
+                    <TextView
+                        android:id="@+id/weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/soft_cream"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:text="000.0kg" />
+
+                    <ImageButton
+                        android:id="@+id/plus_weight"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:contentDescription="-"
+                        android:background="@color/cherry_red"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/plus_icon" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+
+    </LinearLayout>

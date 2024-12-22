@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical"
+    android:background="#555555">
+
+    <!-- Food Name -->
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="0dp"
+        android:textColor="#cccccc"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Food Name"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/cals"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Cals"
+        android:textColor="@color/cherry_red"
+        android:textSize="17dp"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/protein"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Protein"
+        android:textColor="@color/redish_brown"
+        android:textSize="17dp"
+        android:textAlignment="center" />
+
+
+
+    <TextView
+        android:id="@+id/quantity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Qty"
+        android:textColor="@color/orange"
+        android:textSize="17dp"
+        android:textAlignment="center" />
+</LinearLayout>

@@ -1,0 +1,203 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- LinearLayout for Switch and TextView -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/cherry_red"
+        android:paddingTop="7dp"
+        android:paddingStart="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/soft_cream"
+            android:textStyle="bold"
+            android:shadowColor="@color/black"
+            android:shadowRadius="15"
+            android:textSize="27dp"
+            android:text="Track" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center_horizontal"
+        android:background="@color/soft_cream">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbarStyle="insideInset"
+            android:layout_height="wrap_content">
+
+            <!-- Wrap all views inside a LinearLayout -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp">
+
+                    <!-- Switch for toggling -->
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/dataToggle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:textSize="18sp"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/black"
+                        android:text="Calories  "
+                        android:layout_marginEnd="0dp" />
+
+                    <!-- TextView for Calories -->
+                    <TextView
+                        android:id="@+id/weighttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:textColor="@color/black"
+                        android:textSize="18dp"
+                        android:text=" Weight" />
+                </LinearLayout>
+
+                <!-- LinearLayout for Radio Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="16dp">
+
+                    <RadioGroup
+                        android:id="@+id/radioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center">
+
+                        <RadioButton
+                            android:id="@+id/day_1"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="Today"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/button_style"
+                            android:button="@null"
+                            android:textColor="@color/soft_cream"
+                            android:gravity="center"
+                            android:padding="7dp" />
+
+                        <RadioButton
+                            android:id="@+id/day_7"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="7 days"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/button_style"
+                            android:button="@null"
+                            android:textColor="@color/soft_cream"
+                            android:gravity="center"
+                            android:padding="7dp" />
+
+                        <RadioButton
+                            android:id="@+id/day_30"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_weight="1"
+                            android:text="30 days"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/button_style"
+                            android:button="@null"
+                            android:textColor="@color/soft_cream"
+                            android:gravity="center"
+                            android:padding="7dp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- BarChart for displaying the data -->
+                <com.github.mikephil.charting.charts.BarChart
+                    android:id="@+id/barChart"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:contentDescription=""
+                    android:layout_marginBottom="16dp" />
+
+                <!-- CombinedChart for displaying the data -->
+                <com.github.mikephil.charting.charts.LineChart
+                    android:id="@+id/combinedChart"
+                    android:layout_width="match_parent"
+                    android:contentDescription=""
+                    android:layout_height="300dp"
+                    android:layout_marginTop="16dp"
+                    android:visibility="gone" />
+
+                <!-- TextViews for displaying the date, today's data, and average -->
+                <TextView
+                    android:id="@+id/date_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="YYYY/MM/DD"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/static_textcolor"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/todayCalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Calories: 0"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/todayProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Today's Protein: 0"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/averageCalories"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Average Calories: 0"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/averageProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Average Protein: 0"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:layout_marginBottom="8dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

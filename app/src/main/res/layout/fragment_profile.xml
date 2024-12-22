@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/soft_cream">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/cherry_red"
+        android:paddingTop="7dp"
+        android:paddingStart="10dp"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical">
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/soft_cream"
+            android:textStyle="bold"
+            android:shadowColor="@color/black"
+            android:shadowRadius="15"
+            android:textSize="27sp"
+            android:layout_weight="1"
+            android:text="Profile"/>
+
+        <ImageButton
+            android:contentDescription="save"
+            android:id="@+id/edit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/edit"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:padding="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="0.01"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/soft_cream" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:paddingTop="0dp"
+        android:paddingStart="10dp"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="@color/soft_cream"
+            app:cardCornerRadius="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvwelcome"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Hello there!"
+        android:textAlignment="center"
+        android:textSize="43dp"
+        android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvname"
+            android:textColor="@color/static_textcolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="35sp"
+            android:textAlignment="center"
+            android:text="No name" />
+
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:id="@+id/match_parent"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:text="Your informations"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center"
+            android:background="@android:color/black" />
+
+        <TableLayout
+            android:padding="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:paddingBottom="2dp">
+            <TextView
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Age "
+                android:textSize="28dp" />
+
+            <TextView
+                android:id="@+id/tvage"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:textColor="@color/static_textcolor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="28dp" />
+
+
+            </TableRow>
+
+            <View
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+
+            <TableRow
+                android:paddingBottom="2dp">
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="Gender"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/tvgender"
+            android:textColor="@color/static_textcolor"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="NO GENDER"
+            android:textSize="28dp" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+
+
+
+            <TableRow
+                android:paddingBottom="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Height"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/heightView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="start"
+            android:text="0cm"
+            android:textColor="@color/static_textcolor"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@android:color/black"
+                android:layout_marginBottom="10dp"/>
+
+            <TableRow
+                android:paddingBottom="2dp">
+        <TextView
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="Weight"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/weightView"
+            android:textColor="@color/static_textcolor"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="0kgs"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center"
+                android:background="@android:color/black" />
+        </TableLayout>
+
+                <TextView
+                    android:id="@+id/tvgoal"
+                    android:textColor="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Error loading" />
+
+
+                <com.google.android.material.progressindicator.LinearProgressIndicator
+                    android:id="@+id/goal_bar"
+                    android:paddingTop="5dp"
+                    android:layout_width="match_parent"
+                    android:progress="0"
+                    android:max="100"
+                    app:indicatorColor="@color/static_textcolor"
+                    app:trackThickness="15dp"
+                    app:trackColor="#3333"
+                    app:trackCornerRadius="5dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"/>
+
+
+
+                <FrameLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/delete_button"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:text="DELETE" />
+
+                <Button
+                    android:id="@+id/manage_button"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:text="Change" />
+                </FrameLayout>
+
+
+                <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/BMIView"
+            android:layout_height="wrap_content"
+            android:text="BMI"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:paddingBottom="10dp"
+            android:textColor="@color/soft_cream"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

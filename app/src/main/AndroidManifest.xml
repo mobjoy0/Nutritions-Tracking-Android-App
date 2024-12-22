@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wess.makmouk">
+
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/add_icon"
+        android:label="Maklti"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup"
+        android:hardwareAccelerated="true"
+        tools:targetApi="31">
+
+
+        <!-- Main Activity Declaration -->
+        <activity android:name=".activities.LoadingScreenActivity"
+            android:launchMode="singleTask"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <activity android:name=".activities.MainActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:name=".activities.ScanActivity"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"/>
+
+        <activity android:name=".activities.ProfileSelectionActivity"
+            android:parentActivityName=".activities.MainActivity" />
+
+
+
+        <activity android:name=".activities.CreateMealActivity"
+            android:parentActivityName=".activities.MainActivity"/>
+
+
+        <activity android:name=".activities.CreateProfileActivity"
+            android:parentActivityName=".activities.ProfileSelectionActivity" />
+
+        <activity android:name=".activities.MealRecord"
+            android:parentActivityName=".activities.MainActivity" />
+
+        <activity android:name=".activities.AddMealActivity"
+            android:parentActivityName=".activities.MainActivity" />
+
+    </application>
+
+</manifest>
