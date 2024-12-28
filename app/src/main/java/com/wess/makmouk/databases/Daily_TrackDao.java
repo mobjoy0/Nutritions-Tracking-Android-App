@@ -33,7 +33,7 @@ public interface Daily_TrackDao {
     List<DailyTrack> getLast7DaysRecords(int profileId);
 
     @Query("UPDATE daily_track_table SET caloriesConsumed = caloriesConsumed + :AddCalories, protein = protein + :AddProtein, carbs = carbs + :AddCarbs, fats = fats + :AddFats WHERE profileId = :profileId AND date = CURRENT_DATE")
-    void AddCaloriesOrProtein(int profileId, int AddCalories, int AddProtein, int AddCarbs, int AddFats);
+    void AddCaloriesOrProtein(int profileId, int AddCalories, double AddProtein, int AddCarbs, int AddFats);
 
 
     @Query("SELECT * FROM daily_track_table WHERE profileId = :profileId AND date = :date LIMIT 1")

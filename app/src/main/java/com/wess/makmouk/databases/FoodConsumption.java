@@ -120,7 +120,7 @@ public class FoodConsumption {
         return totalProtein;
     }
 
-    public void setTotalProtein(int totalProtein) {
+    public void setTotalProtein(double totalProtein) {
         this.totalProtein = totalProtein;
     }
 

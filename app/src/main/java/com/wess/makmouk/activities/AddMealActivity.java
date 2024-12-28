@@ -174,7 +174,7 @@ public class AddMealActivity extends AppCompatActivity {
                         selectedFood.getId(), (int) quantity, currentDate);
 
                 foodConsumption.setTotalCalories((int) calories);
-                foodConsumption.setTotalProtein((int) proteins);
+                foodConsumption.setTotalProtein( proteins);
 
             } else {
                 foodConsumption.addCaloriesNdProtein((int) calories, (int) proteins, (int) quantity);
@@ -184,7 +184,7 @@ public class AddMealActivity extends AppCompatActivity {
 
             try {
                 Log.wtf("addmeal", "Adding to daily track...");
-                dailyTrackDao.AddCaloriesOrProtein(profileId, (int) calories, (int) proteins, (int) carbs, (int) fats);
+                dailyTrackDao.AddCaloriesOrProtein(profileId, (int) calories,proteins, (int) carbs, (int) fats);
                 Log.wtf("addmeal", "Calories and protein added successfully to daily track");
             } catch (Exception e) {
                 Log.wtf("addmeal", "Error adding to daily track", e);
