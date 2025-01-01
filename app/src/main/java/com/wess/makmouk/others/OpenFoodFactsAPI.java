@@ -18,7 +18,6 @@ import com.wess.makmouk.databases.*;
 
 public class OpenFoodFactsAPI {
     private final ExecutorService executorService = Executors.newSingleThreadExecutor();
-    private DataBase dataBase;
     private FoodDao foodDao;
 
     public Pair<Food, String> getNutritionValuesAPI(String barcode, Context context) {
@@ -100,7 +99,7 @@ public class OpenFoodFactsAPI {
         food.setUnit("g");
 
         // Save to database
-        dataBase = DataBase.getInstance(context);
+        DataBase dataBase = DataBase.getInstance(context);
         foodDao = dataBase.foodDao();
 
         executorService.submit(() -> {

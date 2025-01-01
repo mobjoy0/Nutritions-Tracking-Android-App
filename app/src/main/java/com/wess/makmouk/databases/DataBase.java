@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 
 @Database(entities = {Profile.class, DailyTrack.class, Food.class,
-        FoodConsumption.class, FoodPreferences.class}, version = 50)
+        FoodConsumption.class, FoodPreferences.class}, version = 51)
 public abstract class DataBase extends RoomDatabase {
 
     public static volatile DataBase instance;

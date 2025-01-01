@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -15,8 +14,6 @@
         android:orientation="horizontal"
         android:gravity="start|center_vertical">
 
-
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +25,6 @@
             android:layout_weight="1"
             android:text="Record a meal"/>
 
-
     </LinearLayout>
 
     <LinearLayout
@@ -36,7 +32,138 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <EditText
+            android:id="@+id/quantityEditText"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:hint="Enter meal name"
+            android:textAlignment="center"
+            android:layout_marginTop="15dp"/>
 
+        <RadioGroup
+            android:id="@+id/mode_radio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/recipeRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:buttonTint="@color/cherry_red"
+                android:textColor="@color/static_textcolor"
+                android:text="Add" />
+
+            <RadioButton
+                android:id="@+id/costumeRadio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:buttonTint="@color/cherry_red"
+                android:textColor="@color/static_textcolor"
+                android:text="Costume" />
+        </RadioGroup>
+
+        <!-- FrameLayout for switching inputs -->
+        <FrameLayout
+            android:id="@+id/inputFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Regular Inputs (visible by default) -->
+            <LinearLayout
+                android:id="@+id/regularInputsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoCompleteView"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:hint="Select Food"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:focusable="true"
+                    android:clickable="true" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addIngredient"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add"
+                    android:background="@color/static_textcolor"
+                    android:textColor="@color/soft_cream"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/ingredientsRecycle"
+                    android:clipToPadding="false"
+                    android:background="@color/soft_cream"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <!-- Costume Inputs (initially hidden) -->
+            <LinearLayout
+                android:id="@+id/costumeInputsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <EditText
+                    android:id="@+id/caloriesInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Calories"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/proteinInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Protein"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/fatsInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Fats"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/carbsInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Carbs"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+                <EditText
+                    android:id="@+id/gramInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:hint="Grams per serving"
+                    android:textColorHint="@color/black"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+            </LinearLayout>
+
+        </FrameLayout>
     </LinearLayout>
-
 </LinearLayout>

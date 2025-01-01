@@ -3,6 +3,7 @@ package com.wess.makmouk.fragments;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
@@ -94,8 +95,10 @@ public class HomeFragment extends Fragment {
 
         Create_meal.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(android.view.View v) {
-                NavigateToCreateMeal();
+            public void onClick(View v) {
+
+                Intent intent = new Intent(requireContext(), CreateMealActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -335,10 +338,7 @@ public class HomeFragment extends Fragment {
         }
     });
 
-    private void NavigateToCreateMeal(){
-        Intent intent = new Intent(requireContext(), CreateMealActivity.class);
-        startActivity(intent);
-    }
+
 
 
 

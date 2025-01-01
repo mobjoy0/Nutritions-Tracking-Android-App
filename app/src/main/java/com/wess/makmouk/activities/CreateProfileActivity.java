@@ -11,7 +11,6 @@ import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -58,13 +57,13 @@ public class CreateProfileActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            // Use ContextCompat.getColor() for compatibility with older Android versions
             window.setStatusBarColor(ContextCompat.getColor(this, R.color.cherry_red));
         }
         OnBackPressedCallback callback = new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
                 if (PreferencesManager.getLastProfileId(CreateProfileActivity.this) == -1){
+
                 } else {
                     finish();
                 }

@@ -34,7 +34,7 @@ public class LoadingScreenActivity extends AppCompatActivity {
     private Daily_TrackDao dailyTrackDao;
     private ExecutorService executorService = Executors.newSingleThreadExecutor();
 
-    public static int animationTime = 2000;
+    public static int animationTime = 1200;
 
     public static void setAnimationTime(int time) {
         animationTime = time;
@@ -62,20 +62,22 @@ public class LoadingScreenActivity extends AppCompatActivity {
         Check_SelectedProfile(PreferencesManager.getLastProfileId(this));
 
 
-
-
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent(LoadingScreenActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }, animationTime);
+        if (PreferencesManager.getLastProfileId(this) != -1) {
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(LoadingScreenActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }, animationTime);
+        }
     }
 
-
     private void Check_SelectedProfile(int lastProfileId) {
+        Log.wtf("logod,g","last p ="+lastProfileId);
         if (lastProfileId == 0 || lastProfileId == -1) {
             Intent intent = new Intent(LoadingScreenActivity.this, CreateProfileActivity.class);
+            Log.wtf("logeg","Going to creaete");
             startActivity(intent);
+            finish();
         }
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         String currentDate = sdf.format(new Date());
